@@ -1,0 +1,162 @@
+{
+  "design_system": {
+    "identity": {
+      "name": "Lumina",
+      "archetype": "Swiss & High-Contrast",
+      "vibe": "Objective, rigid, functional, gallery-like",
+      "core_philosophy": "Content is King. The interface recedes; the product advances."
+    },
+    "typography": {
+      "font_family": {
+        "headings": "Space Grotesk, sans-serif",
+        "body": "Inter, sans-serif",
+        "mono": "JetBrains Mono, monospace"
+      },
+      "imports": [
+        "@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap');"
+      ],
+      "scale": {
+        "h1": "text-5xl md:text-7xl font-bold tracking-tight leading-none",
+        "h2": "text-3xl md:text-5xl font-semibold tracking-tight",
+        "h3": "text-2xl md:text-3xl font-medium tracking-tight",
+        "body_lg": "text-lg leading-relaxed text-muted-foreground",
+        "body_base": "text-base leading-relaxed text-muted-foreground",
+        "caption": "text-xs uppercase tracking-widest font-medium text-muted-foreground"
+      }
+    },
+    "colors": {
+      "palette": {
+        "background": "#ffffff",
+        "foreground": "#0a0a0a",
+        "primary": "#002FA7",
+        "primary_foreground": "#ffffff",
+        "secondary": "#f4f4f5",
+        "secondary_foreground": "#18181b",
+        "muted": "#f4f4f5",
+        "muted_foreground": "#71717a",
+        "accent": "#f4f4f5",
+        "accent_foreground": "#18181b",
+        "border": "#e4e4e7",
+        "input": "#e4e4e7",
+        "ring": "#0a0a0a"
+      },
+      "usage": {
+        "primary_action": "bg-primary text-primary-foreground hover:bg-primary/90",
+        "secondary_action": "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+        "outline": "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+        "ghost": "hover:bg-accent hover:text-accent-foreground"
+      }
+    },
+    "spacing": {
+      "container": "container mx-auto px-4 md:px-8",
+      "section_padding": "py-16 md:py-24 lg:py-32",
+      "element_gap": "gap-6 md:gap-8 lg:gap-12"
+    },
+    "visual_enhancers": {
+      "radius": "rounded-none",
+      "shadows": {
+        "card": "shadow-none hover:shadow-lg transition-shadow duration-300",
+        "dropdown": "shadow-xl border border-border"
+      },
+      "borders": "border border-border",
+      "glassmorphism": "bg-white/80 backdrop-blur-md border-b border-white/20"
+    }
+  },
+  "components": {
+    "buttons": {
+      "default": "rounded-none font-medium tracking-wide uppercase text-xs px-8 py-6",
+      "primary": "bg-primary text-white hover:bg-primary/90",
+      "outline": "border-2 border-black text-black hover:bg-black hover:text-white bg-transparent"
+    },
+    "cards": {
+      "product": "group relative bg-transparent border-none shadow-none",
+      "feature": "bg-secondary/30 p-8 border border-transparent hover:border-border transition-colors"
+    },
+    "inputs": {
+      "default": "rounded-none border-x-0 border-t-0 border-b-2 border-input bg-transparent px-0 focus-visible:ring-0 focus-visible:border-primary transition-colors"
+    }
+  },
+  "layouts": {
+    "grid_system": {
+      "marketing": "grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8",
+      "product_list": "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12",
+      "dashboard": "grid grid-cols-1 md:grid-cols-4 gap-6"
+    },
+    "bento_grid": {
+      "hero": "col-span-full md:col-span-8 row-span-2 min-h-[600px]",
+      "sidebar": "col-span-full md:col-span-4 row-span-2 flex flex-col gap-4"
+    }
+  },
+  "assets": {
+    "images": {
+      "hero": {
+        "fashion": "https://images.unsplash.com/photo-1762509547577-76aa7cf87c62?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "electronics": "https://images.pexels.com/photos/1447252/pexels-photo-1447252.jpeg",
+        "furniture": "https://images.pexels.com/photos/963486/pexels-photo-963486.jpeg"
+      },
+      "categories": {
+        "men": "https://images.unsplash.com/photo-1762505464762-538a199c3155?crop=entropy&cs=srgb&fm=jpg&q=85",
+        "tech": "https://images.pexels.com/photos/6373146/pexels-photo-6373146.jpeg",
+        "home": "https://images.pexels.com/photos/462235/pexels-photo-462235.jpeg"
+      },
+      "products": [
+        {
+          "name": "Minimalist Watch",
+          "url": "https://images.pexels.com/photos/21424634/pexels-photo-21424634.jpeg",
+          "category": "Accessories"
+        },
+        {
+          "name": "Modern Chair",
+          "url": "https://images.pexels.com/photos/8534460/pexels-photo-8534460.jpeg",
+          "category": "Furniture"
+        },
+        {
+          "name": "Studio Lamp",
+          "url": "https://images.pexels.com/photos/6786894/pexels-photo-6786894.jpeg",
+          "category": "Lighting"
+        }
+      ]
+    }
+  },
+  "instructions_to_main_agent": {
+    "general": [
+      "Implement the 'Swiss & High-Contrast' theme. Use pure white backgrounds and stark black text.",
+      "Use 'Space Grotesk' for all headings and 'Inter' for body text.",
+      "Buttons must be sharp (rounded-none) and uppercase.",
+      "Do not use standard card borders for products; let the image breathe.",
+      "Use the 'International Klein Blue' (#002FA7) ONLY for primary actions and active states.",
+      "Ensure all interactive elements have 'data-testid' attributes."
+    ],
+    "layout_specifics": {
+      "header": "Sticky, glassmorphism effect (bg-white/80 backdrop-blur-md). Minimal height (h-16 or h-20). Logo on left, centered nav, right-aligned cart/account.",
+      "hero": "Asymmetrical grid. Large image on left (col-span-8), text/CTA on right (col-span-4).",
+      "product_page": "Split screen on desktop. Left side: Sticky image gallery (grid or stack). Right side: Scrollable details. NO TABS. Use vertical accordions for 'Details', 'Shipping', 'Reviews'.",
+      "cart": "Slide-over drawer (Sheet component) instead of a dedicated page for quick access, but keep full page for checkout."
+    },
+    "component_overrides": {
+      "Button": "Remove rounded classes. Add tracking-widest and uppercase.",
+      "Input": "Remove full border. Use border-b-2 only (underline style) for a cleaner look.",
+      "Card": "Remove shadow and border. Use transparent background."
+    }
+  },
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy",
+    "Use glass-morphism effects with backdrop filters (12-24px blur)",
+    "You MUST NOT apply universal transition. Eg: transition: all. This results in breaking transforms. Always add transitions for specific interactive elements like button, input excluding transforms",
+    "You MUST NOT center align the app container, ie do not add .App { text-align: center; } in the css file. This disrupts the human natural reading flow of text",
+    "Always use modern button styles like pill-shaped, or sharp button with interaction animations & color relevant to the app style",
+    "NEVER: use AI assistant Emoji characters like 🤖🧠💭💡🔮🎯📚🎭🎬🎪🎉🎊🎁🎀🎂🍰🎈🎨🎰💰💵💳🏦💎🪙💸🤑📊📈📉💹🔢🏆🥇 etc for icons.",
+    "Every interaction needs micro-animations - hover states, transitions, parallax effects, and entrance animations. Static = dead.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "Subtle grain textures, noise overlays, custom cursors, selection states, and loading animations: separates good from extraordinary.",
+    "Main agent relies on these image URLs. Missing categories (especially sponsor logos) = main agent will use placeholder text which is FORBIDDEN",
+    "Prioritize using pre-existing components from src/components/ui when applicable",
+    "Create new components that match the style and conventions of existing components when needed",
+    "Examine existing components to understand the project's component patterns before creating new ones",
+    "Components MUST use named exports (export const ComponentName = ...)",
+    "Pages MUST use default exports (export default function PageName() {...})",
+    "Use sonner for toasts. Sonner component are located in /app/src/components/ui/sonner.tsx"
+  ]
+}

@@ -119,3 +119,109 @@ Node/npm errors: Use npm install --legacy-peer-deps if dependencies fail due to 
 Backend Python package missing: Make sure your virtual environment is activated.
 
 Port conflicts: Ensure frontend (3000) and backend (5000) ports are free.
+
+# Emergent App - MongoDB Setup and Database Seeding
+
+This project demonstrates how to set up a local MongoDB database on macOS, connect via Python using `motor` (async MongoDB driver), seed the database with initial data, and verify the data using both terminal and GUI tools.
+
+---
+
+## Project Structure
+
+backend/
+├── seed_data.py
+├── test_mongo.py
+├── venv/
+├── .env
+
+-   `seed_data.py` → Script to seed the database with users and products.
+-   `test_mongo.py` → Script to test the MongoDB connection.
+-   `.env` → Environment variables (MongoDB URL, DB name, JWT secret, etc.).
+-   `venv/` → Python virtual environment (isolated dependencies).
+
+# Environment Setup (macOS)
+
+## Ensure MongoDB is installed
+
+1. Check installation:
+
+```bash
+brew list | grep mongo
+If MongoDB is not installed:
+
+bash
+brew tap mongodb/brew
+brew install mongodb-community@7.0
+Start MongoDB:
+
+bash
+brew services start mongodb-community@7.0
+brew services list
+MongoDB server should show started.
+```
+
+2. Create virtual environment:
+
+python3 -m venv venv
+
+Activate it:
+source venv/bin/activate
+
+pip install motor "passlib[bcrypt]" python-dotenv bcrypt
+
+---
+
+### 3️⃣ `TEST_CONNECTION.md` — Test MongoDB Connection
+
+````markdown
+# Test MongoDB Connection
+
+Create `test_mongo.py`:
+
+```python
+import asyncio
+from motor.motor_asyncio import AsyncIOMotorClient
+
+async def test_connection():
+    client = AsyncIOMotorClient("mongodb://localhost:27017")
+    dbs = await client.list_database_names()
+    print("Databases:", dbs)
+
+if __name__ == "__main__":
+    asyncio.run(test_connection())
+
+Run the script:
+python test_mongo.py
+
+
+Expected output:
+
+Databases: ['admin', 'config', 'local', 'test_database']
+
+This confirms MongoDB is running and reachable.
+```
+````
+
+### 4️⃣ `SEED_DATABASE.md` — Seed Database
+
+Run Seed Database
+
+python seed_data.py
+
+---
+
+### 5️⃣ `VIEW_DATABASE.md` — View Database
+
+````markdown
+# View Database
+
+## Using Mongo Shell
+
+```bash
+mongosh
+use test_database
+show collections
+db.users.find().pretty()
+db.products.find().pretty()
+```
+````

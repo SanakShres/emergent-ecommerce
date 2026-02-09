@@ -145,7 +145,7 @@ class Category(BaseModel):
 class CartItem(BaseModel):
     product_id: str
     quantity: int
-    variation: Optional[Dict[str, str]] = None
+    variation: Optional[ProductVariation] = None
     price: float
 
 class Cart(BaseModel):
@@ -161,7 +161,7 @@ class OrderItem(BaseModel):
     product_name: str
     quantity: int
     price: float
-    variation: Optional[Dict[str, str]] = None
+    variation: Optional[ProductVariation] = None
 
 class ShippingInfo(BaseModel):
     first_name: str

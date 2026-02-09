@@ -10,12 +10,12 @@ This guide will help you set up and run the project locally.
 
 ## Table of Contents
 
--   [Prerequisites](#prerequisites)
--   [Project Structure](#project-structure)
--   [Frontend Setup](#frontend-setup)
--   [Backend Setup](#backend-setup)
--   [Common Issues](#common-issues)
--   [Running the Project](#running-the-project)
+- [Prerequisites](#prerequisites)
+- [Project Structure](#project-structure)
+- [Frontend Setup](#frontend-setup)
+- [Backend Setup](#backend-setup)
+- [Common Issues](#common-issues)
+- [Running the Project](#running-the-project)
 
 ---
 
@@ -23,11 +23,11 @@ This guide will help you set up and run the project locally.
 
 Make sure you have the following installed:
 
--   **Node.js** (v18+ recommended)
--   **npm** (comes with Node.js)
--   **Python** (v3.9+)
--   **pip** (Python package manager)
--   (Optional) **Yarn** — only if you prefer it over npm
+- **Node.js** (v18+ recommended)
+- **npm** (comes with Node.js)
+- **Python** (v3.9+)
+- **pip** (Python package manager)
+- (Optional) **Yarn** — only if you prefer it over npm
 
 ---
 
@@ -112,6 +112,38 @@ python3 server.py
 
 ---
 
+## To run BE
+
+1. Create a Python Virtual Environment (if necessary)
+   python3 -m venv venv
+
+This creates a folder venv which isolates your project dependencies.
+
+2. Activate the Virtual Environment
+
+macOS / Linux:
+
+source venv/bin/activate
+
+Windows (PowerShell):
+
+.\venv\Scripts\Activate.ps1
+
+You should now see (venv) in your terminal prompt.
+
+3. Run the backend server:
+
+```bash
+python3 server.py
+
+```
+
+### Exit the virtual environment
+
+deactivate
+
+---
+
 # Common Issues
 
 Node/npm errors: Use npm install --legacy-peer-deps if dependencies fail due to peer conflicts.
@@ -134,10 +166,10 @@ backend/
 ├── venv/
 ├── .env
 
--   `seed_data.py` → Script to seed the database with users and products.
--   `test_mongo.py` → Script to test the MongoDB connection.
--   `.env` → Environment variables (MongoDB URL, DB name, JWT secret, etc.).
--   `venv/` → Python virtual environment (isolated dependencies).
+- `seed_data.py` → Script to seed the database with users and products.
+- `test_mongo.py` → Script to test the MongoDB connection.
+- `.env` → Environment variables (MongoDB URL, DB name, JWT secret, etc.).
+- `venv/` → Python virtual environment (isolated dependencies).
 
 # Environment Setup (macOS)
 

@@ -342,7 +342,7 @@ async def get_products(
         else:
             query["base_price"] = {"$lte": max_price}
     
-    sort_order = -1 if sort in ["created_at", "rating", "base_price"] else 1
+    sort_order = -1 if sort in ["created_at", "rating"] else 1
     products = await db.products.find(query, {"_id": 0}).sort(sort, sort_order).skip(skip).limit(limit).to_list(limit)
     
     for product in products:
